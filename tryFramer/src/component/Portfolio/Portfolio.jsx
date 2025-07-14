@@ -25,12 +25,12 @@ const projects = [
   },
   {
     id: 3,
-    title: "Weather Dashboard",
-    description: "A beautiful weather dashboard that displays current weather, forecasts, and interactive maps with location-based services.",
+    title: "Scientific Calculater",
+    description: " A modern, responsive scientific calculator built with React and Tailwind CSS. Supports basic arithmetic and advanced scientific functions.",
     image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=500&h=300&fit=crop",
     technologies: ["JavaScript", "Weather API", "Chart.js", "CSS3"],
-    github: "https://github.com",
-    live: "https://demo.com",
+    github: "https://github.com/xulkif/calculater/tree/main/my-app",
+    live: "https://calculatewebapp.onrender.com/",
     category: "frontend"
   },
   {
@@ -49,8 +49,8 @@ const projects = [
     description: "A modern, responsive portfolio website showcasing projects and skills with smooth animations and interactive elements.",
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop",
     technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-    github: "https://github.com/xulkif/portfolio",
-    live: "https://demo.com",
+    github: "https://github.com/xulkif/portfolio-repo/tree/main/tryFramer",
+    live: "https://xulkif-portfolio-gqkc.onrender.com/",
     category: "frontend"
   },
   {
