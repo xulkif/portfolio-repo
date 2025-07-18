@@ -1,40 +1,55 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
+import ecommerce from '../../assets/e-commerce.png'
+import dbms from '../../assets/dbms.png'
+import cal from '../../assets/calculater.png'
+import todo from '../../assets/todo.png'
 
 const projects = [
-  {
+    {
     id: 1,
+    title: "WKU Dormitory Management System",
+    description: "A comprehensive dormitory management system for Western Kentucky University built with MERN stack. Features include room allocation, maintenance requests, student check-in/out, and administrative dashboard.",
+    image: dbms,
+    technologies: ["React", "Node.js", "MongoDB", "Express.js"],
+    github: "https://github.com/xulkif/DBMS",
+    live: "https://dbms-wku.onrender.com/",
+    category: "fullstack"
+  },
+  {
+    id: 2,
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product management, and payment integration.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
+    image:  ecommerce,
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
     github: "https://github.com/xulkif/E-commerce",
     live: "https://xulkif-e-commerce-h46f.onrender.com",
     category: "fullstack"
   },
+
   {
-    id: 2,
+    id: 3,
     title: "To Do List",
     description: "A collaborative task management application with real-time updates ",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=500&h=300&fit=crop",
+    image: todo,
     technologies: ["React", "Firebase", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/xulkif/React-ToDo",
     live: "https://react-to-do-self.vercel.app/",
     category: "frontend"
   },
   {
-    id: 3,
+    id: 4,
     title: "Scientific Calculater",
     description: " A modern, responsive scientific calculator built with React and Tailwind CSS. Supports basic arithmetic and advanced scientific functions.",
-    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=500&h=300&fit=crop",
+    image:cal,
     technologies: ["JavaScript", "Weather API", "Chart.js", "CSS3"],
     github: "https://github.com/xulkif/calculater/tree/main/my-app",
     live: "https://calculatewebapp.onrender.com/",
     category: "frontend"
   },
   {
-    id: 4,
+    id: 5,
     title: "Doctor Appointment",
     description: "A doctor's appointment is a scheduled meeting with a healthcare professional to discuss your health, receive a diagnosis, get treatment, or for a routine check-up",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop",
@@ -44,7 +59,7 @@ const projects = [
     category: "fullstack"
   },
   {
-    id: 5,
+    id: 6,
     title: "Portfolio Website",
     description: "A modern, responsive portfolio website showcasing projects and skills with smooth animations and interactive elements.",
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop",
@@ -53,16 +68,7 @@ const projects = [
     live: "https://xulkif-portfolio-gqkc.onrender.com/",
     category: "frontend"
   },
-  {
-    id: 6,
-    title: "WKU Dormitory Management System",
-    description: "A comprehensive dormitory management system for Western Kentucky University built with MERN stack. Features include room allocation, maintenance requests, student check-in/out, and administrative dashboard.",
-    image: "https://images.unsplash.com/photo-1562774053-701939374585?w=500&h=300&fit=crop",
-    technologies: ["React", "Node.js", "MongoDB", "Express.js"],
-    github: "https://github.com/xulkif/DBMS",
-    live: "https://dbms-wku.onrender.com/",
-    category: "fullstack"
-  }
+
 ];
 
 const categories = ["all", "frontend", "backend", "fullstack"];

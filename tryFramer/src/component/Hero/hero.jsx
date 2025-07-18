@@ -1,7 +1,7 @@
 import MovingBackground from "./background";
 import { motion } from "framer-motion";
 import Intro from "./intro";
-import img2 from "../../assets/fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg";
+import img2 from "../../assets/boitumelo-o_tcYADlSt8-unsplash.jpg";
 import About from "./About";
 import Portfolio from "../Portfolio/Portfolio";
 import Skills from "../Skills/Skills";
@@ -9,27 +9,28 @@ import Contact from "../Contact/Contact";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col gap-0">
+    <section className="flex flex-col gap-0  ">
       {/* Hero Section */}
-      <section id="home" className="relative h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
-        {/* <MovingBackground /> */}
-        <div className="relative z-20 flex items-center justify-center h-full px-4">
-          {/* <motion.div
-            className="absolute top-20"
+      <section id="home" className="relative  h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-6 overflow-hidden">
+        <MovingBackground />
+           <motion.div
+            className="absolute top-[50%]"
             initial={{ x: "100vw" }}
             animate={{ x: "-100vw" }}
             transition={{
-              duration: 15,
+              duration: 20,
               repeat: Infinity,
               ease: "linear",
             }}
           >
-            <h1 className="lg:text-5xl sm:text-3xl font-bold text-blue-400/60 z-10">
-              FULL-STACK DEVELOPER & CREATIVE PROBLEM SOLVER
+            <h1 className="lg:text-2xl sm:text-md font-bold text-blue-400/60 opacity-30">
+              FULL-STACK DEVELOPER <br/> with modern UI
             </h1>
-          </motion.div> */}
+          </motion.div>
+        <div className="relative   flex items-center justify-center h-full px-4 ">
+       
           
-          <div className="text-white flex flex-col lg:flex-row justify-between items-center gap-12 max-w-7xl mx-auto">
+          <div className="text-white flex flex-col md:flex-row justify-between items-center   ">
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
@@ -43,7 +44,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="flex-1 flex justify-center"
+              className=" flex-1 flex justify-center "
             >
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
