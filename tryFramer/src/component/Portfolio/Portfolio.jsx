@@ -94,7 +94,7 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <div className="max-w-7xl mx-auto px-4 py-20">
       <motion.div
         className="text-center mb-16"
         initial={{ opacity: 0, y: 50 }}
@@ -102,10 +102,10 @@ export default function Portfolio() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-5xl lg:text-6xl font-bold mb-4">
-          My <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Portfolio</span>
+        <h2 className="text-5xl lg:text-6xl font-bold mb-4 text-[var(--color-text-primary)]">
+          My <span className="bg-gradient-to-r from-[var(--color-accent-primary)] to-[var(--color-accent-secondary)] bg-clip-text text-transparent">Portfolio</span>
         </h2>
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+        <p className="text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto">
           Here are some of my recent projects that showcase my skills and passion for creating innovative solutions.
         </p>
       </motion.div>
@@ -124,8 +124,8 @@ export default function Portfolio() {
             onClick={() => filterProjects(category)}
             className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
               selectedCategory === category
-                ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                : "bg-white/10 text-gray-300 hover:bg-white/20"
+                ? "bg-gradient-to-r from-[var(--color-accent-primary)] to-[var(--color-accent-secondary)] text-white shadow-lg shadow-blue-500/25"
+                : "glass text-[var(--color-text-secondary)] hover:bg-white/10 hover:text-white"
             }`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -151,7 +151,7 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="group relative bg-white/5 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300"
+            className="group relative glass rounded-2xl overflow-hidden hover:bg-white/5 transition-all duration-300 border border-white/5"
           >
             {/* Project Image */}
             <div className="relative h-48 overflow-hidden">
@@ -160,15 +160,15 @@ export default function Portfolio() {
                 alt={project.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-primary)] to-transparent opacity-80"></div>
               
               {/* Overlay with links */}
-              <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-sm">
                 <motion.a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
+                  className="p-3 bg-white/10 backdrop-blur-md rounded-full hover:bg-[var(--color-accent-primary)] hover:text-white transition-colors text-white"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -178,7 +178,7 @@ export default function Portfolio() {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
+                  className="p-3 bg-white/10 backdrop-blur-md rounded-full hover:bg-[var(--color-accent-primary)] hover:text-white transition-colors text-white"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -189,10 +189,10 @@ export default function Portfolio() {
 
             {/* Project Content */}
             <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+              <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-3 group-hover:text-[var(--color-accent-primary)] transition-colors">
                 {project.title}
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-4 line-clamp-3">
                 {project.description}
               </p>
               
@@ -201,7 +201,7 @@ export default function Portfolio() {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-white/10 text-xs rounded-full text-gray-300"
+                    className="px-3 py-1 bg-white/5 text-xs rounded-full text-[var(--color-text-secondary)] border border-white/5"
                   >
                     {tech}
                   </span>
@@ -220,11 +220,11 @@ export default function Portfolio() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <p className="text-gray-400 mb-6">
+        <p className="text-[var(--color-text-secondary)] mb-6 text-lg">
           Interested in working together? Let's create something amazing!
         </p>
         <motion.button
-          className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          className="px-8 py-4 bg-gradient-to-r from-[var(--color-accent-primary)] to-[var(--color-accent-secondary)] text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={scrollToContact}
@@ -234,4 +234,4 @@ export default function Portfolio() {
       </motion.div>
     </div>
   );
-} 
+}

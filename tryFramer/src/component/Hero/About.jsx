@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import img from "../../assets/myCS.jpg";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function About() {
   const ref = useRef(null);
@@ -22,14 +22,8 @@ export default function About() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToPortfolio = () => {
-    document.getElementById('portfolio').scrollIntoView({ 
-      behavior: 'smooth' 
-    });
-  };
-
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <div className="max-w-7xl mx-auto px-4 py-20">
       <motion.div
         className="text-center mb-16"
         initial={{ opacity: 0, y: 50 }}
@@ -37,13 +31,13 @@ export default function About() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-5xl lg:text-6xl font-bold mb-4">
+        <h2 className="text-5xl lg:text-6xl font-bold mb-4 text-[var(--color-text-primary)]">
           About{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[var(--color-accent-primary)] to-[var(--color-accent-secondary)] bg-clip-text text-transparent">
             Me
           </span>
         </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-[var(--color-accent-primary)] to-[var(--color-accent-secondary)] mx-auto rounded-full"></div>
       </motion.div>
 
       <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -52,11 +46,9 @@ export default function About() {
           initial={{ x: -100, opacity: 0 }}
           animate={isVisible ? { x: 0, opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="space-y-6"
+          className="space-y-8"
         >
-           
-
-          <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+          <div className="space-y-6 text-lg text-[var(--color-text-secondary)] leading-relaxed">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +57,7 @@ export default function About() {
               className="text-xl"
             >
               👋 Hi there! I'm{" "}
-              <span className="font-semibold text-blue-400">Zulkif Azher</span>,
+              <span className="font-semibold text-[var(--color-accent-primary)]">Zulkif Azher</span>,
               a full-stack developer who loves building cool things with
               technology.
             </motion.p>
@@ -99,15 +91,15 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
-              <span className="text-blue-400">🎯</span>
+            <div className="glass flex items-center gap-2 px-6 py-3 rounded-full text-[var(--color-text-primary)]">
+              <span className="text-[var(--color-accent-primary)]">🎯</span>
               <span>Problem Solver</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
-              <span className="text-purple-400">🚀</span>
+            <div className="glass flex items-center gap-2 px-6 py-3 rounded-full text-[var(--color-text-primary)]">
+              <span className="text-[var(--color-accent-secondary)]">🚀</span>
               <span>Fast Learner</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
+            <div className="glass flex items-center gap-2 px-6 py-3 rounded-full text-[var(--color-text-primary)]">
               <span className="text-green-400">💻</span>
               <span>Code Enthusiast</span>
             </div>
@@ -121,15 +113,15 @@ export default function About() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative">
+          <div className="relative group w-80 h-80 lg:w-96 lg:h-96">
+            <div className="absolute -inset-4 bg-gradient-to-r from-[var(--color-accent-primary)] to-[var(--color-accent-secondary)] rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition duration-500"></div>
+            <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
               <img
                 src={img}
                 alt="Zulkif Azher - Full Stack Developer"
-                className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl shadow-2xl transform group-hover:rotate-2 transition-transform duration-500 object-cover"
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
           </div>
         </motion.div>

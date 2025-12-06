@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 
 export default function Intro() {
   const abilities = [
-    "Full-Stack Developer",
-    "MERN Stack Developer",
-    "node js, react js ",
+    "Microsoft Power Platform",
+    "SharePoint Developer",
+    "Power BI Expert",
   ];
   const [currentAbility, setCurrentAbility] = useState(abilities[0]);
   const [displayedText, setDisplayedText] = useState("");
@@ -13,16 +13,9 @@ export default function Intro() {
 
   // Function to handle CV download
   const downloadCV = () => {
-    // Create a link element
     const link = document.createElement('a');
-    
-    // Set the CV file path using Vite's base URL and correct file name
-    link.href = '/mycv.pdf'; // Ensure this path is correct for your project setup
-    
-    // Set the download attribute with a custom filename
+    link.href = '/mycv.pdf'; 
     link.download = 'Zulkif_Azher_CV.pdf';
-    
-    // Append to body, click, and remove
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -44,7 +37,7 @@ export default function Intro() {
       } else {
         clearInterval(typingInterval);
       }
-    }, 150); // Typing speed
+    }, 50); // Faster typing speed
 
     return () => clearInterval(typingInterval);
   }, [index, currentAbility]);
@@ -52,22 +45,21 @@ export default function Intro() {
   // Effect for changing abilities
   useEffect(() => {
     const abilityChangeInterval = setInterval(() => {
-      setIndex(0); // Reset index for new ability
-      setDisplayedText(""); // Clear displayed text
+      setIndex(0); 
+      setDisplayedText(""); 
       const nextIndex =
         (abilities.indexOf(currentAbility) + 1) % abilities.length;
       setCurrentAbility(abilities[nextIndex]);
-    }, 4000); // Time before changing to next ability
+    }, 3000); // Faster rotation
 
     return () => clearInterval(abilityChangeInterval);
   }, [currentAbility, abilities]);
 
   return (
-    // Added responsive padding and max-width for better mobile layout
-    <div className="px-4 py-8 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <motion.div className="space-y-4 sm:space-y-6"> {/* Adjusted space-y for smaller screens */}
+    <div className="flex flex-col gap-6">
+      <motion.div className="space-y-2">
         <motion.h3 
-          className="text-base sm:text-lg lg:text-xl font-medium text-blue-400" // Adjusted text size for better mobile scaling
+          className="text-xl font-medium text-[var(--color-accent-primary)]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -84,26 +76,26 @@ export default function Intro() {
               repeatDelay: 2,
               ease: "easeInOut",
             }}
-            className="ml-2 text-xl sm:text-2xl inline-block origin-bottom" // Adjusted size for mobile
+            className="ml-2 inline-block origin-bottom"
           >
             👋
           </motion.span>
         </motion.h3>
         
         <motion.h2 
-          className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white" // Adjusted text size for better mobile scaling
+          className="text-5xl md:text-7xl font-bold text-[var(--color-text-primary)] tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           I'm{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[var(--color-accent-primary)] to-[var(--color-accent-secondary)] bg-clip-text text-transparent">
             Zulkif Azher
           </span>
         </motion.h2>
         
         <motion.div
-          className="text-xl sm:text-3xl lg:text-4xl font-bold text-gray-300 min-h-[2.5rem] sm:min-h-[3rem] lg:min-h-[4rem]" // Adjusted min-height for mobile
+          className="text-2xl md:text-4xl font-bold text-[var(--color-text-secondary)] h-16 flex items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -119,7 +111,7 @@ export default function Intro() {
             <motion.span
               animate={{ opacity: [1, 0] }}
               transition={{ duration: 0.8, repeat: Infinity }}
-              className="ml-1"
+              className="ml-1 text-[var(--color-accent-primary)]"
             >
               |
             </motion.span>
@@ -127,7 +119,7 @@ export default function Intro() {
         </motion.div>
         
         <motion.p 
-          className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-prose leading-relaxed" // Used max-w-prose for better readability on all screens
+          className="text-lg text-[var(--color-text-secondary)] max-w-xl leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -136,13 +128,13 @@ export default function Intro() {
         </motion.p>
         
         <motion.div
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4" // Changed to flex-col on mobile, flex-row on sm screens and up
+          className="flex flex-wrap gap-4 pt-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <motion.button
-            className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1" // Reverted px-6 to px-8 for original padding
+            className="px-8 py-3 bg-gradient-to-r from-[var(--color-accent-primary)] to-[var(--color-accent-secondary)] text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={scrollToPortfolio}
@@ -150,7 +142,7 @@ export default function Intro() {
             View My Work
           </motion.button>
           <motion.button
-            className="w-full sm:w-auto px-8 py-3 border-2 border-blue-400 text-blue-400 font-semibold rounded-lg hover:bg-blue-400 hover:text-white transition-all duration-300" // Reverted px-6 to px-8 for original padding
+            className="px-8 py-3 border border-[var(--color-accent-primary)] text-[var(--color-accent-primary)] font-semibold rounded-full hover:bg-[var(--color-accent-primary)] hover:text-white transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={downloadCV}
